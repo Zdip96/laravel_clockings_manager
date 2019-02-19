@@ -156,7 +156,7 @@ class UsersController extends Controller
             $user->save();
 
             // redirect
-            Session::flash('message', 'Date angajat modificate cu success!');
+            Session::flash('message', 'Employee\'s data was successfully updated!');
             return Redirect::to('panel/employees');
         }
     }
@@ -174,7 +174,7 @@ class UsersController extends Controller
         $user->delete();
 
         // redirect
-        Session::flash('message', 'Angajatul a fost șters cu success!');
+        Session::flash('message', 'Employee was successfully deleted!');
         return redirect()->route('panel_users');
     }
 }
