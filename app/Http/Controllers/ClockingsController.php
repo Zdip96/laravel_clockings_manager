@@ -68,7 +68,7 @@ class ClockingsController extends Controller
             'function' => 'required|numeric',
 
             'clocking_type' => 'required|numeric|min:1',
-            'clocking_date' => 'required|string|unique:clockings',
+            'clocking_date' => 'required|string|unique:clockings,clocking_date,NULL,id,user_id,' . $id,
             'clocking_hours' => 'required|numeric',
             
             'clocking_presence' => 'required|boolean',
@@ -115,7 +115,7 @@ class ClockingsController extends Controller
 
         // Process validation
         if ($validator->fails()) {
-            return Redirect::to('panel/employees/' . $id . '/clockings')
+            return redirect()->route('panel_users_clockings', $id)
                 ->withErrors($validator)
                 ->withInput(Input::all());
         } else {
@@ -127,9 +127,7 @@ class ClockingsController extends Controller
                 $clocking->department_id     = Input::get('department');
                 $clocking->function_id       = Input::get('function');
                 $clocking->clocking_type_id  = Input::get('clocking_type');
-                if($clocking->clocking_date === null) {
-                    $clocking->clocking_date     = $value;
-                }
+                $clocking->clocking_date     = $value;
                 $clocking->clocking_hours    = Input::get('clocking_hours');
                 $clocking->clocking_presence = Input::get('clocking_presence');
                 $clocking->clocking_overtime = Input::get('clocking_overtime');

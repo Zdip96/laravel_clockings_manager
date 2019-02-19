@@ -137,7 +137,7 @@ class UsersController extends Controller
 
         // Process validation
         if ($validator->fails()) {
-            return Redirect::to('panel/employees/' . $id . '/modifica')
+            return redirect()->route('panel_users_edit', $id)
                 ->withErrors($validator)
                 ->withInput(Input::all());
         } else {
@@ -157,7 +157,7 @@ class UsersController extends Controller
 
             // redirect
             Session::flash('message', 'Employee\'s data was successfully updated!');
-            return Redirect::to('panel/employees');
+            return redirect()->route('panel_users_update', $id);
         }
     }
 
