@@ -115,7 +115,7 @@ class ClockingsController extends Controller
 
         // Process validation
         if ($validator->fails()) {
-            return Redirect::to('panou/muncitori/' . $id . '/pontare')
+            return Redirect::to('panel/employees/' . $id . '/clockings')
                 ->withErrors($validator)
                 ->withInput(Input::all());
         } else {
@@ -138,7 +138,7 @@ class ClockingsController extends Controller
             }
 
             // redirect
-            Session::flash('message', 'Pontaj adăugat cu success!');
+            Session::flash('message', 'Clocking/s added successfully!');
             return back();
         }
     }
@@ -191,7 +191,7 @@ class ClockingsController extends Controller
         $clocking->delete();
 
         // redirect
-        Session::flash('message', 'Pontajul a fost șters cu success!');
+        Session::flash('message', 'Clocking/s added successfully!');
         return redirect()->route('panel_users_clockings', $id);
     }
 }

@@ -80,23 +80,6 @@ class UsersController extends Controller
 
         return view('dashboard.users.show', compact('user', 'user_role', 'user_department', 'user_function'));
     }
-
-    /**
-     * Remove clocking from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function clockings_destroy($id, $clocking_id)
-    {
-        // Delete
-        $clocking = DB::table('clockings')->where('clocking_id', $clocking_id);
-        $clocking->delete();
-
-        // redirect
-        Session::flash('message', 'Pontajul a fost șters cu success!');
-        return redirect()->route('panel_users_clockings', $id);
-    }
     
     /**
      * Show the form for editing the specified resource.
@@ -154,7 +137,7 @@ class UsersController extends Controller
 
         // Process validation
         if ($validator->fails()) {
-            return Redirect::to('panou/muncitori/' . $id . '/modifica')
+            return Redirect::to('panel/employees/' . $id . '/modifica')
                 ->withErrors($validator)
                 ->withInput(Input::all());
         } else {
@@ -174,7 +157,7 @@ class UsersController extends Controller
 
             // redirect
             Session::flash('message', 'Date angajat modificate cu success!');
-            return Redirect::to('panou/muncitori');
+            return Redirect::to('panel/employees');
         }
     }
 

@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-10">
         <div class="card">
-            <div class="card-header">Sumar</div>
+            <div class="card-header">Overview</div>
 
             <div class="card-body">
                 @if (session('status'))

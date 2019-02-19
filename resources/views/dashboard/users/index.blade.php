@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-10">
         <div class="card">
-            <div class="card-header text-center">Vizualizare utilizatori</div>
+            <div class="card-header text-center">View Employees</div>
 
             <div class="card-body">
                 @if (session('status'))
@@ -21,10 +21,10 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nume întreg</th>
-                            <th scope="col">Departament</th>
-                            <th scope="col">Funcție</th>
-                            <th scope="col" colspan="3">Actiuni</th>
+                            <th scope="col">Full name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Function</th>
+                            <th scope="col" colspan="3">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +39,7 @@
                                     <a href="{{ route('panel_users_show', $user->user_id) }}">
                                         {{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}
                                         @if($user->user_id == $current_user->user_id)
-                                            <span class="badge badge-pill badge-success">tu</span>
+                                            <span class="badge badge-pill badge-success">You</span>
                                         @endif
                                     </a>
                                 </td>
@@ -72,7 +72,7 @@
 
             {{-- Card footer --}}
             <div class="card-footer text-muted text-center">
-                Utilizatori
+                All Employees
             </div>
         </div>
     </div>

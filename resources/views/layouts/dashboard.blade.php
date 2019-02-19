@@ -61,16 +61,16 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('instructions') }}">{{ __('Instrucțiuni') }}</a>
+                                <a class="nav-link" href="{{ route('instructions') }}">{{ __('Instructions') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('clocking') }}">{{ __('Pontare') }}</a>
+                                <a class="nav-link" href="{{ route('clocking') }}">{{ __('Clock-In') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('panel_index') }}">{{ __('Panou') }}</a>
+                                <a class="nav-link" href="{{ route('panel_index') }}">{{ __('Panel') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('settings') }}">{{ __('Setări') }}</a>
+                                <a class="nav-link" href="{{ route('settings') }}">{{ __('Settings') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -104,15 +104,15 @@
                         <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center">
                             <small>MAIN MENU</small>
                         </li>
-                        <a href="{{ route('panel_index') }}" class="list-group-item">{{ __('Sumar') }}</a>
-                        <a href="{{ route('panel_users') }}" class="list-group-item">{{ __('Muncitori') }}</a>
-                        <a href="{{ route('panel_users_create') }}" class="list-group-item">{{ __('Adaugă muncitor') }}</a>
+                        <a href="{{ route('panel_index') }}" class="list-group-item">{{ __('Overview') }}</a>
+                        <a href="{{ route('panel_users') }}" class="list-group-item">{{ __('Employees') }}</a>
+                        <a href="{{ route('panel_users_create') }}" class="list-group-item">{{ __('Add employee') }}</a>
                         <li class="list-group-item sidebar-separator"></li>
                         <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center">
                             <small>ACTIONS</small>
                         </li>
                         <a href="#" class="list-group-item list-group-item-action p-2 d-flex justify-content-center">
-                            <button class="btn btn-primary">Descarcă Excel</button>
+                            <button class="btn btn-primary">Download Excel</button>
                         </a>
                         <li class="list-group-item sidebar-separator"></li>
                     </ul>
